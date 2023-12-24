@@ -17,18 +17,19 @@
 import { ref, reactive } from 'vue'
 // 对于一个普通的对象来说如果想让
 //它成为响应式对象就需要将他使用reactive()就行包裹
-let car = reactive({ brand: 'sanye', price: 100 })
-let games = [
+let car = ref({ brand: 'sanye', price: 100 })
+let games = ref([
     { id: '01sanye', name: '王者' },
     { id: '02sanye', name: '原神' },
     { id: '03sanye', name: '启动' }
-]
+])
+// 修改ref 修饰的响应式数据 需要.value 拿到数据
 function changeValue() {
-    car.brand = 'sanyejiejei',
-    car.price += 10
+    car.value.brand = 'sanyejiejei',
+    car.value.price += 10
 }
 function changeFirstGame() {
-    games[0].name='sanyejiejeie'
+    games.value[0].name='sanyejiejeie'
 }
 </script>
 
