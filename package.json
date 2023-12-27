@@ -13,6 +13,10 @@
   "dependencies": {
     "axios": "^1.6.2",
     "axois": "^0.0.1-security",
+    "mitt": "^3.0.1",
+    "nanoid": "^5.0.4",
+    "pinia": "^2.1.7",
+    "utils": "^0.3.1",
     "vue": "^3.3.11",
     "vue-router": "^4.2.5"
   },

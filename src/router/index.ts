@@ -1,30 +1,52 @@
-// 创建一个路由器 并暴露出去
+import { createRouter, createWebHistory } from 'vue-router'
+import Props from '@/pages/01_props/Father.vue'
+import Event from '@/pages/02_custom-event/Father.vue'
+import Bus from '@/pages/03_mitt/Father.vue'
+import Model from '@/pages/04_v-model/Father.vue'
+import AttrsListeners from '@/pages/05_$attrs/Father.vue'
+import RefChildrenParent from '@/pages/06_$refs-$parent/Father.vue'
+import ProvideInject from '@/pages/07_provide-inject/Father.vue'
+import Pinia from '@/pages/08_pinia/Father.vue'
+import Slot from '@/pages/09_slot/Father.vue'
 
-// 引入createRouter
-import {createRouter,createWebHistory} from 'vue-router'
-// 引入一个一个可能呈现的组件
-import Home from '@/components/Home.vue'
-import New from '@/components/New.vue'
-import About from '@/components/About.vue'
-
-// 创建路由器
-const router=createRouter({
-    history:createWebHistory(), //路由器的工作模式
-    routes:[// 一个一个的工作规则
-        {
-            path:'/home',
-            component:Home
-        },
-        {
-            path:'/news',
-            component:New
-        },
-        {
-            path:'/about',
-            component:About
-        }
-    ]
+export default createRouter({
+	history: createWebHistory(),
+	routes: [
+		{
+			path: '/props',
+			component: Props
+		},
+		{
+			path: '/event',
+			component: Event
+		},
+		{
+			path: '/mitt',
+			component: Bus
+		},
+		{
+			path: '/model',
+			component: Model
+		},
+		{
+			path: '/attrs',
+			component: AttrsListeners
+		},
+		{
+			path: '/ref-parent',
+			component: RefChildrenParent
+		},
+		{
+			path: '/provide-inject',
+			component: ProvideInject
+		},
+		{
+			path: '/pinia',
+			component: Pinia
+		},
+		{
+			path: '/slot',
+			component: Slot
+		},
+	]
 })
-
-// 暴露出去 router
-export default router
